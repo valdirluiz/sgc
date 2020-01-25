@@ -4,6 +4,16 @@ This project uses Quarkus, the Supersonic Subatomic Java Framework.
 
 If you want to learn more about Quarkus, please visit its website: https://quarkus.io/ .
 
+## Prepare a PostgreSQL instance
+
+Make sure you have a PostgreSQL instance running. To set up a PostgreSQL database with Docker:
+
+> docker run --ulimit memlock=-1:-1 -it --rm=true --memory-swappiness=0 --name quarkus_test -e POSTGRES_USER=quarkus_test -e POSTGRES_PASSWORD=quarkus_test -e POSTGRES_DB=quarkus_test -p 5432:5432 postgres:10.5
+
+### Initial PostgreSQL Data
+
+Add the sql statements in `src/main/resources/init-data.sql` file.
+
 ## Running the application in dev mode
 
 You can run your application in dev mode that enables live coding using:
